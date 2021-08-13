@@ -25,15 +25,15 @@ namespace APIComidaTeste.Controllers
         public IActionResult ConsultaAlimentos()
         {
             var resultado = _db.Alimento.ListarAlimentos();
-            return Ok();
+             return Ok();
         }
-        [HttpPost]
-        [Route("cadastrar_alimento")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
-        public IActionResult CadastrarAlimento([FromForm] Lib.ModelsView.AlimentoParametros alimentoParametros)
-        {
-            return Ok();
-            //var resultado = _db.Alimento.CadastroAlimento(alimentoParametros);
-        }
+        //[HttpPost]
+        //[Route("cadastrar_alimento")]
+        //[SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
+        //public IActionResult CadastrarAlimento([FromForm] Lib.ModelsView.AlimentoParametros alimentoParametros)
+        //{
+        //    var resultado = _db.Alimento.CadastroAlimento(alimentoParametros);
+        //    return Ok();
+        //}
     }
 }

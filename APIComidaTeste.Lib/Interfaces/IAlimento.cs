@@ -1,4 +1,5 @@
-﻿using APIComidaTeste.LIB.ModelsDB;
+﻿using APIComidaTeste.Lib.ModelsView;
+using APIComidaTeste.LIB.ModelsDB;
 using System;
 using System.Collections.Generic;
 

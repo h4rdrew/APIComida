@@ -1,4 +1,5 @@
-﻿using APIComidaTeste.LIB.Interfaces;
+﻿using APIComidaTeste.Lib.ModelsView;
+using APIComidaTeste.LIB.Interfaces;
 using APIComidaTeste.LIB.ModelsDB;
 using Simple.Sqlite;
 using System;
