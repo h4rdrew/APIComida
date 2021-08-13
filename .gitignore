@@ -348,3 +348,6 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+APIComidaTeste/Alimentos/alimento.sqlitedb
+APIComidaTeste/Alimentos/alimento.sqlitedb.bak.gz
+APIComidaTeste/Alimentos/alimento.sqlitedb.old.gz

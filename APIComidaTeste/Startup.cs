@@ -31,6 +31,16 @@ namespace APIComidaTeste
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APIComidaTeste", Version = "v1" });
             });
+
+            services.AddCors(o =>
+            {
+                o.AddPolicy("AllowAllHeaders", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -47,6 +57,8 @@ namespace APIComidaTeste
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("AllowAllHeaders");
 
             app.UseEndpoints(endpoints =>
             {
