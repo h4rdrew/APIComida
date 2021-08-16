@@ -10,7 +10,7 @@ namespace APIComidaTeste.Lib
     {
         public enum TipoAlimento
         {
-            Proteína = 1,
+            Proteina = 1,
             Carboidrato = 2,
             Gordura = 3,
             Vitamina = 4,
