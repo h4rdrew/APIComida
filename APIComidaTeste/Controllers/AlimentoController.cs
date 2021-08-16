@@ -43,5 +43,23 @@ namespace APIComidaTeste.Controllers
             var resultado = _db.Alimento.CadastroAlimento(alimentoDB);
             return Ok(resultado);
         }
+
+        [HttpGet]
+        [Route("buscar_alimento")]
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
+        public IActionResult BuscarAlimento(string nomeAlimento)
+        {
+            var resultado = _db.Alimento.BuscarAlimento(nomeAlimento);
+            return Ok(resultado);
+        }
+
+        [HttpGet]
+        [Route("random_alimentos")]
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
+        public IActionResult Teste()
+        {
+            var resultado = _db.Alimento.RandomAliemento();
+            return Ok(resultado);
+        }
     }
 }

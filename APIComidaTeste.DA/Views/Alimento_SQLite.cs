@@ -12,7 +12,7 @@ namespace APIComidaTeste.DA.Views
     {
         #region DB
         public SqliteDB DB { get; }
-        
+
         public Alimento_SQLite(SqliteDB DB)
         {
             this.DB = DB;
@@ -43,9 +43,7 @@ namespace APIComidaTeste.DA.Views
 
         public Model_Alimento RandomAliemento()
         {
-            Random rnd = new();
-            int r = rnd.Next(ListarAlimentos().Count());
-            return ListarAlimentos().ElementAt(r);
+            throw new NotImplementedException();
         }
     }
 }
