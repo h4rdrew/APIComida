@@ -1,5 +1,6 @@
 ﻿using APIComidaTeste.DA.Views;
 using APIComidaTeste.Lib.Interfaces;
+using APIComidaTeste.Lib.ModelsView;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -21,7 +22,7 @@ namespace APIComidaTeste.Controllers
 
         [HttpGet]
         [Route("listar_alimentos")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(AlimentoParametros))]
         public IActionResult ConsultaAlimentos()
         {
             var resultado = _db.Alimento.ListarAlimentos();
@@ -30,8 +31,8 @@ namespace APIComidaTeste.Controllers
 
         [HttpPost]
         [Route("cadastrar_alimento")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
-        public IActionResult CadastrarAlimento([FromBody] Lib.ModelsView.AlimentoParametros alimentoParametros)
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(AlimentoParametros))]
+        public IActionResult CadastrarAlimento([FromBody] AlimentoParametros alimentoParametros)
         {
             var alimentoDB = new LIB.ModelsDB.Model_Alimento()
             {
@@ -46,7 +47,7 @@ namespace APIComidaTeste.Controllers
 
         [HttpGet]
         [Route("buscar_alimento")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(AlimentoParametros))]
         public IActionResult BuscarAlimento(string nomeAlimento)
         {
             var resultado = _db.Alimento.BuscarAlimento(nomeAlimento);
@@ -54,7 +55,7 @@ namespace APIComidaTeste.Controllers
         }
         [HttpGet]
         [Route("buscar_alimento_guid")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(AlimentoParametros))]
         public IActionResult BuscarAlimentoGuid(Guid guid)
         {
             var resultado = _db.Alimento.BuscarAlimento(guid);
@@ -63,7 +64,7 @@ namespace APIComidaTeste.Controllers
 
         [HttpGet]
         [Route("random_alimentos")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(AlimentoParametros))]
         public IActionResult RandomAlimento()
         {
             var resultado = _db.Alimento.RandomAliemento();
@@ -72,8 +73,8 @@ namespace APIComidaTeste.Controllers
 
         [HttpPost]
         [Route("atualizar_alimento")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
-        public IActionResult Atualizar_Alimento([FromBody] Lib.ModelsView.AlimentoParametros AlimentoParametros)
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(AlimentoParametros))]
+        public IActionResult Atualizar_Alimento([FromBody] AlimentoParametros AlimentoParametros)
         {
             var alimentoDB = new LIB.ModelsDB.Model_Alimento
             {
