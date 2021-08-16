@@ -25,6 +25,10 @@ namespace APIComidaTeste.DA.Views
         {
             return DB.Get<Model_Alimento>("Nome", nomeAlimento);
         }
+        public Model_Alimento BuscarAlimento(Guid guid)
+        {
+            return DB.Get<Model_Alimento>("ID", guid);
+        }
         public IEnumerable<Model_Alimento> ListarAlimentos()
         {
             var resultado = DB.GetAll<Model_Alimento>();
