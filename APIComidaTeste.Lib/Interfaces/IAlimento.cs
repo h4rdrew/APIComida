@@ -11,6 +11,6 @@ namespace APIComidaTeste.LIB.Interfaces
         Model_Alimento BuscarAlimento(string nomeAlimento);
         IEnumerable<Model_Alimento> ListarAlimentos();
         int CadastroAlimento(Model_Alimento alimento);
-        Model_Alimento RandomAliemento();
+        List<Model_Alimento> RandomAliemento();
     }
 }

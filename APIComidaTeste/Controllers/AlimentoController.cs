@@ -56,7 +56,7 @@ namespace APIComidaTeste.Controllers
         [HttpGet]
         [Route("random_alimentos")]
         [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
-        public IActionResult Teste()
+        public IActionResult RandomAlimento()
         {
             var resultado = _db.Alimento.RandomAliemento();
             return Ok(resultado);

@@ -34,16 +34,25 @@ namespace APIComidaTeste.DA.Views
             var resultado = DB.GetAll<Model_Alimento>();
             return resultado;
         }
-
         public int CadastroAlimento(Model_Alimento alimento)
         {
             var codigo = DB.InsertOrReplace(alimento);
             return (int)codigo;
         }
-
-        public Model_Alimento RandomAliemento()
+        public List<Model_Alimento> RandomAliemento()
         {
-            throw new NotImplementedException();
+            Random r = new();
+            var listaAlimentos = ListarAlimentos().ToList();
+            var randomAlimentos = new List<Model_Alimento>();
+
+            for (int i = 0; i < 4; i++)
+            {
+                int number = r.Next(listaAlimentos.Count());
+                randomAlimentos.Add(listaAlimentos.ElementAt(number));
+                listaAlimentos.RemoveAt(number);
+            }
+
+            return randomAlimentos;
         }
     }
 }
