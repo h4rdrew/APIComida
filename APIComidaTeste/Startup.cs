@@ -26,7 +26,7 @@ namespace APIComidaTeste
 
             services.AddSingleton(db);
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APIComidaTeste", Version = "v1" });
