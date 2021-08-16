@@ -61,5 +61,22 @@ namespace APIComidaTeste.Controllers
             var resultado = _db.Alimento.RandomAliemento();
             return Ok(resultado);
         }
+
+        [HttpPost]
+        [Route("atualizar_alimento")]
+        [SwaggerResponse((int)HttpStatusCode.OK, "", typeof(Alimento_SQLite))]
+        public IActionResult Atualizar_Alimento([FromBody] Lib.ModelsView.AlimentoParametros AlimentoParametros)
+        {
+            var alimentoDB = new LIB.ModelsDB.Model_Alimento
+            {
+                ID = (Guid)AlimentoParametros.ID,
+                Nome = AlimentoParametros.Nome,
+                TipoAlimento = AlimentoParametros.TipoAlimento,
+            };
+
+            var resultado = _db.Alimento.AtualizarAlimento(alimentoDB); 
+
+            return Ok(resultado);
+        }
     }
 }

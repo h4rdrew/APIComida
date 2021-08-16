@@ -8,9 +8,8 @@ namespace APIComidaTeste.Lib
 {
     public class EnumHelper
     {
-        public enum Tipo
+        public enum TipoAlimento
         {
-            // Fonte: https://encurtador.com.br/jqJW0
             Proteína = 1,
             Carboidrato = 2,
             Gordura = 3,

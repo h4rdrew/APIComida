@@ -21,10 +21,6 @@ namespace APIComidaTeste.DA.Views
               .Commit();
         }
         #endregion
-        public Model_Alimento BuscarAlimento(Guid ID)
-        {
-            return DB.Get<Model_Alimento>(ID);
-        }
         public Model_Alimento BuscarAlimento(string nomeAlimento)
         {
             return DB.Get<Model_Alimento>("Nome", nomeAlimento);
@@ -53,6 +49,11 @@ namespace APIComidaTeste.DA.Views
             }
 
             return randomAlimentos;
+        }
+        public int AtualizarAlimento(Model_Alimento alimento)
+        {
+            var resultado = DB.Insert(alimento, OnConflict.Replace);
+            return (int)resultado;
         }
     }
 }

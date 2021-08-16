@@ -9,7 +9,7 @@ namespace APIComidaTeste.LIB.ModelsDB
         [PrimaryKey]
         public Guid ID { get; set; }
         public string Nome { get; set; }
-        public Tipo TipoAlimento { get; set; }
+        public TipoAlimento TipoAlimento { get; set; }
 
     }
 }
