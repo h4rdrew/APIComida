@@ -39,6 +39,11 @@ namespace APIComidaTeste.DA.Views
             var codigo = DB.InsertOrReplace(alimento);
             return (int)codigo;
         }
+        public int AtualizarAlimento(Model_Alimento alimento)
+        {
+            var resultado = DB.Insert(alimento, OnConflict.Replace);
+            return (int)resultado;
+        }
         public List<Model_Alimento> RandomAliemento()
         {
             Random r = new();
@@ -54,10 +59,6 @@ namespace APIComidaTeste.DA.Views
 
             return randomAlimentos;
         }
-        public int AtualizarAlimento(Model_Alimento alimento)
-        {
-            var resultado = DB.Insert(alimento, OnConflict.Replace);
-            return (int)resultado;
-        }
+
     }
 }
