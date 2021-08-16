@@ -35,9 +35,10 @@ namespace APIComidaTeste.DA.Views
             return resultado;
         }
 
-        public void CadastroAlimento(Model_Alimento alimento)
+        public int CadastroAlimento(Model_Alimento alimento)
         {
-            DB.InsertOrReplace(alimento);
+            var codigo = DB.InsertOrReplace(alimento);
+            return (int)codigo;
         }
 
         public Model_Alimento RandomAliemento()
